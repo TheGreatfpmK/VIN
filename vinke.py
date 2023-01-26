@@ -53,6 +53,7 @@ class App(tk.Tk):
 
         dir_path = os.path.dirname(os.path.realpath(__file__))
         self.save_folder = os.fsencode(dir_path + '/saves/')
+        self.examples_folder = os.fsencode(dir_path + '/examples/')
         
 
     
@@ -148,6 +149,13 @@ class App(tk.Tk):
                                 out_pixels.append(pixels1[index])
                             else:
                                 out_pixels.append(pixels2[index])
+                            if i == value-1 and x == column_size-1:
+                                for i in range(width-(i*column_size+x)-1):
+                                    index += 1
+                                    if (i+j) % 2 == 0:
+                                        out_pixels.append(pixels1[index])
+                                    else:
+                                        out_pixels.append(pixels2[index]) 
         elif option == "Weird Repeat":
             for j in range(value):
                 for i in range(value):
@@ -158,6 +166,13 @@ class App(tk.Tk):
                                 out_pixels.append(pixels1[index])
                             else:
                                 out_pixels.append(pixels2[index])
+                            if i == value-1 and x == column_size-1:
+                                for i in range(width-(i*column_size+x)-1):
+                                    index += 1
+                                    if (i+j) % 2 == 0:
+                                        out_pixels.append(pixels1[index])
+                                    else:
+                                        out_pixels.append(pixels2[index]) 
         elif option == "Noise2":
             for x in range(column_size):
                 for j in range(value):
@@ -168,6 +183,13 @@ class App(tk.Tk):
                                 out_pixels.append(pixels1[index])
                             else:
                                 out_pixels.append(pixels2[index])
+                            if i == value-1 and x == column_size-1:
+                                for i in range(width-(i*column_size+x)-1):
+                                    index += 1
+                                    if (i+j) % 2 == 0:
+                                        out_pixels.append(pixels1[index])
+                                    else:
+                                        out_pixels.append(pixels2[index]) 
         elif option == "Noise3":
             for y in range(row_size):
                 for x in range(column_size):
@@ -178,6 +200,13 @@ class App(tk.Tk):
                                 out_pixels.append(pixels1[index])
                             else:
                                 out_pixels.append(pixels2[index])
+                            if i == value-1 and x == column_size-1:
+                                for i in range(width-(i*column_size+x)-1):
+                                    index += 1
+                                    if (i+j) % 2 == 0:
+                                        out_pixels.append(pixels1[index])
+                                    else:
+                                        out_pixels.append(pixels2[index]) 
         elif option == "Grid":
             for j in range(value):
                 for y in range(row_size):
@@ -188,6 +217,13 @@ class App(tk.Tk):
                                 out_pixels.append(pixels1[index])
                             else:
                                 out_pixels.append(pixels2[index])
+                            if i == value-1 and x == column_size-1:
+                                for i in range(width-(i*column_size+x)-1):
+                                    index += 1
+                                    if (i+j) % 2 == 0:
+                                        out_pixels.append(pixels1[index])
+                                    else:
+                                        out_pixels.append(pixels2[index])
         elif option == "Squares":
             for j in range(value):
                 for y in range(row_size):
@@ -197,7 +233,14 @@ class App(tk.Tk):
                             if i*j % 2 == 0:
                                 out_pixels.append(pixels1[index])
                             else:
-                                out_pixels.append(pixels2[index])    
+                                out_pixels.append(pixels2[index])
+                            if i == value-1 and x == column_size-1:
+                                for i in range(width-(i*column_size+x)-1):
+                                    index += 1
+                                    if i*j % 2 == 0:
+                                        out_pixels.append(pixels1[index])
+                                    else:
+                                        out_pixels.append(pixels2[index])    
         elif option == "Columns":
             for j in range(value):
                 for y in range(row_size):
@@ -208,6 +251,13 @@ class App(tk.Tk):
                                 out_pixels.append(pixels1[index])
                             else:
                                 out_pixels.append(pixels2[index])
+                            if i == value-1 and x == column_size-1:
+                                for i in range(width-(i*column_size+x)-1):
+                                    index += 1
+                                    if i % 2 == 0:
+                                        out_pixels.append(pixels1[index])
+                                    else:
+                                        out_pixels.append(pixels2[index]) 
         elif option == "Splice":
             for j in range(value):
                 for y in range(row_size):
@@ -218,6 +268,13 @@ class App(tk.Tk):
                                 out_pixels.append(pixels1[index])
                             else:
                                 out_pixels.append(pixels2[index])
+                            if i == value-1 and x == column_size-1:
+                                for i in range(width-(i*column_size+x)-1):
+                                    index += 1
+                                    if x % 2 == 0:
+                                        out_pixels.append(pixels1[index])
+                                    else:
+                                        out_pixels.append(pixels2[index]) 
         elif option == "Rows":
             for j in range(value):
                 for y in range(row_size):
@@ -228,6 +285,13 @@ class App(tk.Tk):
                                 out_pixels.append(pixels1[index])
                             else:
                                 out_pixels.append(pixels2[index])
+                            if i == value-1 and x == column_size-1:
+                                for i in range(width-(i*column_size+x)-1):
+                                    index += 1
+                                    if j % 2 == 0:
+                                        out_pixels.append(pixels1[index])
+                                    else:
+                                        out_pixels.append(pixels2[index]) 
 
         image.putdata(out_pixels)
 
